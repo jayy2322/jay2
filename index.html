@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jayara - Premium freelance web developer portfolio by Jay Dhas. Modern websites for businesses, restaurants, cafes, hotels, clinics, brokers and service businesses." />
+  <title>Jayara | Freelance Web Developer</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --soft-bg: #f5f9ff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --card: rgba(255,255,255,0.78);
+      --border: rgba(37,99,235,0.16);
+      --shadow: 0 25px 70px rgba(37, 99, 235, 0.15);
+      --radius: 26px;
+    }
+
+    body.dark {
+      --bg: #020617;
+      --soft-bg: #071124;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --card: rgba(15, 23, 42, 0.75);
+      --border: rgba(96,165,250,0.22);
+      --shadow: 0 25px 70px rgba(0,0,0,0.45);
+    }
+
+    body {
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(37,99,235,.15), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(14,165,233,.12), transparent 35%),
+        radial-gradient(circle at 50% 90%, rgba(59,130,246,.10), transparent 30%);
+      z-index: -1;
+    }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .loader span {
+      width: 55px;
+      height: 55px;
+      border: 4px solid #dbeafe;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav {
+      width: min(1180px, 92%);
+      margin: auto;
+      padding: 16px 22px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toggle, .menu {
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--soft-bg);
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 130px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5.7rem);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, #2563eb, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.16rem;
+      color: var(--muted);
+      max-width: 650px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: .35s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      color: white;
+      box-shadow: 0 16px 35px rgba(37,99,235,.32);
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      border-color: var(--border);
+      background: var(--card);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 460px;
+      border-radius: 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      right: -60px;
+      top: -60px;
+      opacity: .18;
+    }
+
+    .browser {
+      position: relative;
+      background: var(--bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 22px 45px rgba(15,23,42,.12);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(-16px); }
+    }
+
+    .browser-top {
+      padding: 14px;
+      background: var(--soft-bg);
+      display: flex;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: .55;
+    }
+
+    .preview {
+      padding: 24px;
+    }
+
+    .line {
+      height: 14px;
+      border-radius: 20px;
+      background: #dbeafe;
+      margin-bottom: 14px;
+    }
+
+    .line.big {
+      height: 95px;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 20px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 4px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: .85rem;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      margin-top: 10px;
+      letter-spacing: -2px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 14px auto 0;
+      line-height: 1.7;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .about h3 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .list div {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .list i {
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: var(--primary);
+      opacity: .06;
+      right: -40px;
+      bottom: -40px;
+      border-radius: 50%;
+      transition: .35s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+    }
+
+    .card:hover::after {
+      transform: scale(1.8);
+    }
+
+    .icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    }
+
+    .portfolio-img {
+      height: 210px;
+      border-radius: 22px;
+      margin-bottom: 20px;
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.8), rgba(56,189,248,.65)),
+        radial-gradient(circle at top left, #fff, transparent 35%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+
+    .small-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .small-btns a {
+      padding: 11px 15px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .9rem;
+      background: var(--soft-bg);
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .process {
+      counter-reset: step;
+    }
+
+    .process-card {
+      position: relative;
+    }
+
+    .process-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--primary);
+      opacity: .12;
+    }
+
+    .testimonial h4 {
+      margin-top: 18px;
+      color: var(--primary);
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 14px;
+    }
+
+    .pricing-box {
+      text-align: center;
+      max-width: 620px;
+      margin: auto;
+    }
+
+    .pricing-box h3 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .pricing-box p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--soft-bg);
+      border: 1px solid var(--border);
+    }
+
+    .contact-item i {
+      color: var(--primary);
+      font-size: 1.4rem;
+    }
+
+    footer {
+      padding: 34px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: var(--soft-bg);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .socials a:hover {
+      transform: translateY(-5px);
+      background: var(--primary);
+      color: white;
+    }
+
+    .whatsapp-float,
+    .top-btn {
+      position: fixed;
+      right: 24px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 900;
+      box-shadow: 0 16px 35px rgba(0,0,0,.22);
+    }
+
+    .whatsapp-float {
+      bottom: 24px;
+      background: #22c55e;
+      font-size: 1.6rem;
+    }
+
+    .top-btn {
+      bottom: 90px;
+      background: var(--primary);
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+    }
+
+    .top-btn.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid,
+      .why-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 26px;
+        padding: 24px;
+        display: none;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(20px);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+    }
+
+    @media (max-width: 620px) {
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .grid,
+      .why-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: auto;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      nav {
+        padding: 13px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="loader" id="loader"><span></span></div>
+
+  <header>
+    <nav>
+      <div class="logo">Jayara<span>.</span></div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="toggle" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="menu" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="badge"><i class="fa-solid fa-crown"></i> Premium Website Developer</div>
+        <h1>I Build Modern Websites That Help <span class="gradient">Businesses Grow</span></h1>
+        <p>Freelance Web Developer helping local businesses establish a powerful online presence with fast, modern and mobile-friendly websites.</p>
+
+        <div class="btn-group">
+          <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-eye"></i> View My Work</a>
+          <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><h3 data-count="15">0</h3><p>Demo Projects</p></div>
+          <div class="stat"><h3 data-count="7">0</h3><p>Business Types</p></div>
+          <div class="stat"><h3 data-count="100">0</h3><p>Mobile Friendly</p></div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <div class="browser">
+          <div class="browser-top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="preview">
+            <div class="line big"></div>
+            <div class="line" style="width:85%"></div>
+            <div class="line" style="width:65%"></div>
+            <div class="grid" style="grid-template-columns:1fr 1fr; margin-top:22px;">
+              <div class="line big"></div>
+              <div class="line big"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="glass reveal">
+        <div class="section-title" style="text-align:left;margin-bottom:20px;">
+          <span>About Me</span>
+          <h2>Jay Dhas</h2>
+        </div>
+        <p>I am passionate about website development and helping businesses look professional online.</p>
+        <p>I build websites for local businesses, restaurants, cafes, hotels, clinics, brokers, construction companies and service businesses.</p>
+        <p>My focus is modern design, fast loading speed, customer experience and websites that help clients get more enquiries.</p>
+      </div>
+
+      <div class="glass reveal">
+        <div class="list">
+          <div><i class="fa-solid fa-check-circle"></i> Premium business website design</div>
+          <div><i class="fa-solid fa-check-circle"></i> Clean responsive layouts</div>
+          <div><i class="fa-solid fa-check-circle"></i> WhatsApp and call integration</div>
+          <div><i class="fa-solid fa-check-circle"></i> SEO-friendly page structure</div>
+          <div><i class="fa-solid fa-check-circle"></i> Modern animations and smooth UI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Services</span>
+        <h2>Websites I Build</h2>
+        <p>Professional websites designed to attract customers and make your business look trusted.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-briefcase"></i></div><h3>Business Websites</h3><p>Modern websites for local businesses, shops and service providers.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-mug-hot"></i></div><h3>Restaurant & Cafe Websites</h3><p>Menu, gallery, location, WhatsApp order and booking sections.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-hotel"></i></div><h3>Hotel Websites</h3><p>Premium hotel pages with rooms, facilities, gallery and enquiry buttons.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-stethoscope"></i></div><h3>Clinic Websites</h3><p>Professional healthcare websites with services and appointment contact.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-building"></i></div><h3>Real Estate & Broker Websites</h3><p>Property listings, broker profile, location and lead generation design.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-helmet-safety"></i></div><h3>Construction Company Websites</h3><p>Strong, premium websites for builders, architects and contractors.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Portfolio</span>
+        <h2>Featured Demo Projects</h2>
+        <p>Sample websites created for different business categories.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card portfolio-card reveal">
+          <div class="portfolio-img"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3>Interior Design Website</h3>
+          <p>Luxury white-blue business website with premium sections.</p>
+          <div class="small-btns">
+            <a href="#">Live Preview</a>
+            <a href="#">Project Details</a>
+          </div>
+        </div>
+
+        <div class="card portfolio-card reveal">
+          <div class="portfolio-img"><i class="fa-solid fa-tooth"></i></div>
+          <h3>Dental Clinic Website</h3>
+          <p>Clean healthcare website with trust-building UI and contact buttons.</p>
+          <div class="small-btns">
+            <a href="#">Live Preview</a>
+            <a href="#">Project Details</a>
+          </div>
+        </div>
+
+        <div class="card portfolio-card reveal">
+          <div class="portfolio-img"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Restaurant Website</h3>
+          <p>Modern restaurant website with menu, gallery and WhatsApp enquiry.</p>
+          <div class="small-btns">
+            <a href="#">Live Preview</a>
+            <a href="#">Project Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Why Choose Me</span>
+        <h2>Benefits For Your Business</h2>
+      </div>
+
+      <div class="grid why-grid">
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-mobile-screen"></i></div><h3>Mobile Friendly</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-bolt"></i></div><h3>Fast Loading</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-gem"></i></div><h3>Modern Design</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>SEO Friendly</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-brands fa-whatsapp"></i></div><h3>WhatsApp Integration</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-tag"></i></div><h3>Affordable Pricing</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Custom Development</h3></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Launch Support</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Process</span>
+        <h2>How I Build Your Website</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card process-card reveal"><h3>Requirement Discussion</h3><p>Understand your business, target customers and website goal.</p></div>
+        <div class="card process-card reveal"><h3>Design Creation</h3><p>Create a modern design structure suitable for your brand.</p></div>
+        <div class="card process-card reveal"><h3>Website Development</h3><p>Build a fast, responsive and professional website.</p></div>
+        <div class="card process-card reveal"><h3>Review & Feedback</h3><p>Take your feedback and improve the website properly.</p></div>
+        <div class="card process-card reveal"><h3>Launch & Support</h3><p>Publish the website and provide basic guidance after launch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Testimonials</span>
+        <h2>What Business Owners Say</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Jay created a very clean and premium website for our business. Customers can now contact us directly on WhatsApp.”</p>
+          <h4>Rahul Patil</h4>
+          <small>Restaurant Owner</small>
+        </div>
+
+        <div class="card testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <p>“The website looks modern, professional and works perfectly on mobile. Very good experience.”</p>
+          <h4>Dr. Mehta</h4>
+          <small>Clinic Owner</small>
+        </div>
+
+        <div class="card testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Our construction company profile now looks trusted online. The design quality is impressive.”</p>
+          <h4>Amit Shah</h4>
+          <small>Construction Business Owner</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="glass pricing-box reveal">
+        <div class="section-title" style="margin-bottom:20px;">
+          <span>Pricing</span>
+          <h2>Contact For Pricing</h2>
+        </div>
+        <h3>Custom Website Packages</h3>
+        <p>Every business has different needs. Contact me and I will suggest the best website package according to your business, features and budget.</p>
+        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-message"></i> Get Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="section-title" style="text-align:left;margin-bottom:25px;">
+          <span>Contact</span>
+          <h2>Let’s Build Your Website</h2>
+          <p>Ready to make your business look professional online? Contact me now.</p>
+        </div>
+
+        <div class="btn-group">
+          <a href="https://wa.me/917972219776" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+          <a href="tel:+917972219776" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
+        </div>
+      </div>
+
+      <div class="glass contact-info reveal">
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone</strong>
+            <p>+91 7972219776</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <p>jaydhas23@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Available For</strong>
+            <p>Local businesses, startups and service businesses</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+    <p>Copyright © 2026 Jay Dhas. All Rights Reserved.</p>
+  </footer>
+
+  <a href="https://wa.me/917972219776" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <button class="top-btn" id="topBtn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    const loader = document.getElementById("loader");
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 700);
+    });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    const darkToggle = document.getElementById("darkToggle");
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      darkToggle.innerHTML = document.body.classList.contains("dark")
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      reveals.forEach(item => {
+        const windowHeight = window.innerHeight;
+        const elementTop = item.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 90) {
+          item.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    const counters = document.querySelectorAll("[data-count]");
+    let counterStarted = false;
+
+    function startCounters() {
+      const stats = document.querySelector(".stats");
+      if (!stats) return;
+
+      const statsTop = stats.getBoundingClientRect().top;
+      if (statsTop < window.innerHeight && !counterStarted) {
+        counterStarted = true;
+
+        counters.forEach(counter => {
+          const target = +counter.getAttribute("data-count");
+          let current = 0;
+          const speed = target / 70;
+
+          const update = () => {
+            current += speed;
+            if (current < target) {
+              counter.innerText = Math.ceil(current);
+              requestAnimationFrame(update);
+            } else {
+              counter.innerText = target + (target === 100 ? "%" : "+");
+            }
+          };
+
+          update();
+        });
+      }
+    }
+
+    window.addEventListener("scroll", startCounters);
+    startCounters();
+
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 450) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
+      }
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
