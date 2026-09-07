@@ -1,4 +1,68 @@
 /* =========================================================
+   JAYARA WEB WORKS — GLOBAL RESPONSIVE SYSTEM
+   Put this at the VERY END of style.css
+========================================================= */
+
+html {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Prevent images/videos from creating overflow */
+
+img,
+video,
+svg,
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Links/buttons */
+
+button,
+a {
+    max-width: 100%;
+}
+
+
+/* Text should be allowed to shrink */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+    overflow-wrap: break-word;
+}
+/* =========================================================
    JAYARA WEB WORKS — PREMIUM GLASS NAVBAR
 ========================================================= */
 
