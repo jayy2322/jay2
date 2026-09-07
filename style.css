@@ -9090,3 +9090,102 @@ a {
         align-self: flex-end;
     }
 }
+/* =====================================================
+   FOOTER LEGAL LINKS
+===================================================== */
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(247, 240, 232, 0.30);
+}
+
+
+.footer-legal a {
+    position: relative;
+
+    color: rgba(247, 240, 232, 0.42);
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* Underline animation */
+
+.footer-legal a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--jw-gold);
+
+    transform: scaleX(0);
+
+    transform-origin: right;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.footer-legal a:hover {
+    color: var(--jw-gold-light);
+}
+
+
+.footer-legal a:hover::after {
+    transform: scaleX(1);
+
+    transform-origin: left;
+}
+
+
+.footer-legal span {
+    color: rgba(247, 240, 232, 0.18);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .footer-legal {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 9px;
+
+        margin-top: 15px;
+
+        font-size: 7px;
+
+        letter-spacing: 0.10em;
+    }
+
+}
