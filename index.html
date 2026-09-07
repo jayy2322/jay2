@@ -83,49 +83,96 @@
     </div>
 
 
-    <!-- =========================
-         MOBILE NAVBAR
-    ========================== -->
+  <!-- =========================
+     MOBILE NAVBAR
+========================== -->
 
-    <div class="navbar-mobile">
+<header class="navbar-mobile" id="mobileNavbar">
 
-        <!-- Logo -->
-        <a href="#home" class="navbar-logo">
-            <img src="logo.png" alt="Jayara Web Works">
-        </a>
+    <!-- Logo -->
+    <a href="#home" class="navbar-mobile-logo">
+        <img src="logo.png" alt="Jayara Web Works">
+    </a>
 
-        <!-- Menu Button -->
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <!-- Menu Button -->
+    <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+    </button>
 
-            <span></span>
-            <span></span>
+</header>
 
-        </button>
+
+<!-- =========================
+     MOBILE MENU
+========================== -->
+
+<nav class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-inner">
+
+        <div class="mobile-menu-top">
+            <span>JAYARA WEB WORKS</span>
+            <span>MENU / 00</span>
+        </div>
+
+        <div class="mobile-menu-links">
+
+            <a href="#home" class="mobile-nav-link active">
+                <span class="mobile-nav-number">01</span>
+                <span class="mobile-nav-text">HOME</span>
+                <span class="mobile-nav-arrow">↗</span>
+            </a>
+
+            <a href="#about" class="mobile-nav-link">
+                <span class="mobile-nav-number">02</span>
+                <span class="mobile-nav-text">ABOUT</span>
+                <span class="mobile-nav-arrow">↗</span>
+            </a>
+
+            <a href="#services" class="mobile-nav-link">
+                <span class="mobile-nav-number">03</span>
+                <span class="mobile-nav-text">SERVICES</span>
+                <span class="mobile-nav-arrow">↗</span>
+            </a>
+
+            <a href="#work" class="mobile-nav-link">
+                <span class="mobile-nav-number">04</span>
+                <span class="mobile-nav-text">WORK</span>
+                <span class="mobile-nav-arrow">↗</span>
+            </a>
+
+            <a href="#process" class="mobile-nav-link">
+                <span class="mobile-nav-number">05</span>
+                <span class="mobile-nav-text">PROCESS</span>
+                <span class="mobile-nav-arrow">↗</span>
+            </a>
+
+            <a href="#contact" class="mobile-nav-link mobile-nav-contact">
+                <span class="mobile-nav-number">06</span>
+                <span class="mobile-nav-text">START A PROJECT</span>
+                <span class="mobile-nav-arrow">↗</span>
+            </a>
+
+        </div>
+
+        <div class="mobile-menu-bottom">
+            <span>DESIGN · DEVELOP · DELIVER</span>
+            <span>INDIA</span>
+        </div>
 
     </div>
 
+</nav>
 
-    <!-- =========================
-         MOBILE MENU
-    ========================== -->
 
-    <nav class="mobile-menu" id="mobileMenu">
-
-        <a href="#home">HOME</a>
-
-        <a href="#about">ABOUT</a>
-
-        <a href="#services">SERVICES</a>
-
-        <a href="#work">WORK</a>
-
-        <a href="#process">PROCESS</a>
-
-        <a href="#contact">START A PROJECT ↗</a>
-
-    </nav>
-
-</header>
+   
 
 
     <!-- =========================================
