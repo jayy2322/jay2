@@ -7079,3 +7079,872 @@
     }
 
 }
+
+
+/* =========================================================
+   05. PROCESS SECTION
+========================================================= */
+
+.process-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: 150px 0 120px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(200, 138, 55, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(117, 75, 53, 0.08),
+            transparent 28%
+        ),
+        var(--jw-cream);
+
+    color: var(--jw-brown-dark);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.process-container {
+    width: min(1380px, calc(100% - 70px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION META
+========================================================= */
+
+.process-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 60px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.process-number {
+    color: var(--jw-gold);
+}
+
+.process-label {
+    color: var(--jw-brown-dark);
+}
+
+.process-line {
+    width: 70px;
+    height: 1px;
+
+    background: rgba(63, 42, 32, .22);
+}
+
+.process-side-text {
+    color: rgba(63, 42, 32, .42);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.process-header {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 80px;
+    align-items: end;
+
+    margin-bottom: 100px;
+}
+
+.process-kicker {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .22em;
+
+    color: var(--jw-gold);
+}
+
+.process-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 9vw, 140px);
+    font-weight: 500;
+    line-height: .76;
+
+    letter-spacing: -.055em;
+}
+
+.process-heading h2 span {
+    display: inline-block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px var(--jw-brown);
+}
+
+.process-intro {
+    max-width: 430px;
+    justify-self: end;
+}
+
+.process-intro p {
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: rgba(63, 42, 32, .62);
+}
+
+
+/* =========================================================
+   PROCESS LIST
+========================================================= */
+
+.process-list {
+    position: relative;
+
+    border-top: 1px solid rgba(63, 42, 32, .16);
+}
+
+
+/* vertical timeline */
+
+.process-list::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 110px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(200,138,55,.55),
+            rgba(63,42,32,.12),
+            rgba(200,138,55,.35)
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   PROCESS ITEM
+========================================================= */
+
+.process-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 110px 1fr 80px;
+
+    gap: 45px;
+    align-items: center;
+
+    min-height: 210px;
+
+    padding: 40px 0;
+
+    border-bottom: 1px solid rgba(63,42,32,.14);
+
+    transition:
+        padding .5s cubic-bezier(.2,.8,.2,1),
+        background .5s ease;
+}
+
+
+/* =========================================================
+   LARGE NUMBER
+========================================================= */
+
+.process-number-large {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    margin-left: 20px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(117,75,53,.24);
+
+    background: var(--jw-cream);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+
+    color: var(--jw-brown-dark);
+
+    z-index: 2;
+
+    transition:
+        transform .5s ease,
+        background .5s ease,
+        border-color .5s ease;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.process-content {
+    max-width: 700px;
+}
+
+.process-step-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .2em;
+
+    color: var(--jw-gold);
+}
+
+.process-content h3 {
+    margin: 0 0 15px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 4vw, 64px);
+    font-weight: 500;
+
+    line-height: .82;
+
+    letter-spacing: -.045em;
+}
+
+.process-content h3 em {
+    font-style: normal;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px var(--jw-brown);
+}
+
+.process-content p {
+    max-width: 580px;
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.75;
+
+    color: rgba(63,42,32,.58);
+}
+
+
+/* =========================================================
+   PROCESS ICON
+========================================================= */
+
+.process-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(117,75,53,.22);
+
+    border-radius: 50%;
+
+    font-size: 17px;
+
+    color: var(--jw-brown-dark);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        background .4s ease,
+        color .4s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.process-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -25px;
+    right: -25px;
+    top: 8px;
+    bottom: 8px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.45),
+            rgba(255,255,255,.12)
+        );
+
+    opacity: 0;
+
+    transform: scaleX(.96);
+
+    transition:
+        opacity .5s ease,
+        transform .5s cubic-bezier(.2,.8,.2,1);
+
+    z-index: -1;
+}
+
+.process-item:hover::before {
+    opacity: 1;
+
+    transform: scaleX(1);
+}
+
+.process-item:hover {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.process-item:hover .process-number-large {
+    transform: scale(1.08);
+
+    background: var(--jw-brown);
+
+    border-color: var(--jw-brown);
+
+    color: var(--jw-cream-light);
+}
+
+.process-item:hover .process-icon {
+    transform: rotate(45deg);
+
+    background: var(--jw-gold);
+
+    border-color: var(--jw-gold);
+
+    color: white;
+}
+
+
+/* =========================================================
+   PROCESS STATEMENT
+========================================================= */
+
+.process-statement {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 55px;
+
+    margin-top: 100px;
+    padding: 70px 0;
+
+    border-top: 1px solid rgba(63,42,32,.14);
+    border-bottom: 1px solid rgba(63,42,32,.14);
+}
+
+
+/* =========================================================
+   ORBIT / BRAND MARK
+========================================================= */
+
+.process-orbit {
+    position: relative;
+
+    width: 110px;
+    height: 110px;
+
+    flex-shrink: 0;
+}
+
+.process-orbit span:nth-child(1) {
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid var(--jw-gold);
+
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    transform: rotate(-35deg);
+}
+
+.process-orbit span:nth-child(2) {
+    position: absolute;
+
+    left: 35px;
+    top: 12px;
+
+    width: 45px;
+    height: 85px;
+
+    border-left: 1px solid var(--jw-brown);
+
+    border-bottom: 1px solid var(--jw-brown);
+
+    border-bottom-left-radius: 50px;
+}
+
+.process-orbit span:nth-child(3) {
+    position: absolute;
+
+    right: 4px;
+    bottom: 15px;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: var(--jw-gold);
+
+    animation: processOrbitDot 4s ease-in-out infinite;
+}
+
+@keyframes processOrbitDot {
+
+    0%,
+    100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(-8px,-8px);
+    }
+}
+
+
+/* =========================================================
+   STATEMENT TEXT
+========================================================= */
+
+.process-statement > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.process-statement > div:last-child > span {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .2em;
+
+    color: var(--jw-gold);
+}
+
+.process-statement strong {
+    margin-top: 5px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 7vw, 105px);
+    font-weight: 500;
+
+    line-height: .75;
+
+    letter-spacing: -.05em;
+}
+
+.process-statement p {
+    margin: 12px 0 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    color: rgba(63,42,32,.45);
+}
+
+
+/* =========================================================
+   FOOTER CTA
+========================================================= */
+
+.process-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 35px;
+}
+
+.process-footer > span {
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .18em;
+
+    color: rgba(63,42,32,.45);
+}
+
+.process-footer a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-decoration: none;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+
+    color: var(--jw-brown-dark);
+}
+
+.process-footer a b {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--jw-brown);
+
+    color: var(--jw-cream-light);
+
+    font-size: 17px;
+    font-weight: 400;
+
+    transition:
+        transform .4s ease,
+        background .4s ease;
+}
+
+.process-footer a:hover b {
+    transform: rotate(45deg);
+
+    background: var(--jw-gold);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .process-section {
+        padding: 120px 0 90px;
+    }
+
+    .process-header {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-bottom: 70px;
+    }
+
+    .process-intro {
+        justify-self: start;
+
+        max-width: 600px;
+    }
+
+    .process-list::before {
+        left: 80px;
+    }
+
+    .process-item {
+        grid-template-columns: 80px 1fr 60px;
+
+        gap: 30px;
+    }
+
+    .process-number-large {
+        margin-left: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .process-section {
+        padding: 95px 0 70px;
+    }
+
+    .process-container {
+        width: calc(100% - 30px);
+    }
+
+
+    /* meta */
+
+    .process-meta {
+        gap: 10px;
+
+        margin-bottom: 42px;
+    }
+
+    .process-side-text {
+        display: none;
+    }
+
+    .process-line {
+        width: 40px;
+    }
+
+
+    /* heading */
+
+    .process-header {
+        display: block;
+
+        margin-bottom: 60px;
+    }
+
+    .process-heading h2 {
+        font-size: clamp(57px, 16vw, 85px);
+    }
+
+    .process-intro {
+        margin-top: 30px;
+    }
+
+    .process-intro p {
+        font-size: 13px;
+    }
+
+
+    /* timeline */
+
+    .process-list::before {
+        left: 29px;
+    }
+
+
+    .process-item {
+
+        display: grid;
+
+        grid-template-columns: 60px 1fr;
+
+        gap: 20px;
+
+        min-height: auto;
+
+        padding: 38px 0;
+    }
+
+
+    .process-number-large {
+
+        width: 58px;
+        height: 58px;
+
+        margin-left: 0;
+
+        font-size: 23px;
+    }
+
+
+    .process-content h3 {
+
+        font-size: clamp(36px, 10vw, 52px);
+
+        line-height: .82;
+
+        margin-bottom: 17px;
+    }
+
+
+    .process-content p {
+
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+
+    .process-icon {
+
+        display: none;
+    }
+
+
+    .process-item::before {
+
+        left: -10px;
+        right: -10px;
+
+        border-radius: 18px;
+    }
+
+
+    /* statement */
+
+    .process-statement {
+
+        display: block;
+
+        margin-top: 65px;
+
+        padding: 55px 0;
+    }
+
+
+    .process-orbit {
+
+        margin-bottom: 35px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .process-orbit span:nth-child(2) {
+
+        left: 25px;
+
+        width: 35px;
+        height: 62px;
+    }
+
+
+    .process-statement strong {
+
+        font-size: clamp(55px, 15vw, 78px);
+    }
+
+
+    /* footer */
+
+    .process-footer {
+
+        display: block;
+
+        padding-top: 28px;
+    }
+
+
+    .process-footer > span {
+
+        display: block;
+
+        margin-bottom: 22px;
+    }
+
+
+    .process-footer a {
+
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .process-section {
+        padding-top: 80px;
+    }
+
+    .process-container {
+        width: calc(100% - 26px);
+    }
+
+    .process-item {
+        grid-template-columns: 52px 1fr;
+
+        gap: 15px;
+    }
+
+    .process-number-large {
+        width: 52px;
+        height: 52px;
+
+        font-size: 21px;
+    }
+
+    .process-list::before {
+        left: 26px;
+    }
+
+    .process-content h3 {
+        font-size: 35px;
+    }
+
+    .process-content p {
+        font-size: 11.5px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .process-section *,
+    .process-section *::before,
+    .process-section *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
