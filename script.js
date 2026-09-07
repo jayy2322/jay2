@@ -70,60 +70,88 @@ ${name}
    MOBILE NAVBAR
 ========================================================= */
 
-const jwNavbar = document.getElementById("jwNavbar");
-const jwMenu = document.getElementById("jwMenu");
-const jwNavLinks = document.querySelectorAll(".jw-nav-link");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (jwMenu && jwNavbar) {
+    const mobileNavbar = document.getElementById("mobileNavbar");
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    // Open / close mobile menu
-    jwMenu.addEventListener("click", () => {
-        jwNavbar.classList.toggle("menu-open");
+    if (!mobileNavbar || !mobileMenuBtn || !mobileMenu) {
+        return;
+    }
 
-        const isOpen = jwNavbar.classList.contains("menu-open");
+    mobileMenuBtn.addEventListener("click", function () {
 
-        jwMenu.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        document.body.classList.toggle("nav-open", isOpen);
+        const isOpen =
+            mobileNavbar.classList.toggle("menu-open");
+
+        mobileMenuBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        mobileMenuBtn.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+
+        document.body.classList.toggle(
+            "mobile-nav-open",
+            isOpen
+        );
+
     });
 
 
-    // Close menu when a navigation link is clicked
-    jwNavLinks.forEach(link => {
-        link.addEventListener("click", () => {
+    /* Close after clicking a link */
 
-            jwNavbar.classList.remove("menu-open");
-            document.body.classList.remove("nav-open");
+    const mobileLinks =
+        mobileMenu.querySelectorAll(".mobile-nav-link");
 
-            jwMenu.setAttribute("aria-label", "Open menu");
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileNavbar.classList.remove("menu-open");
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenuBtn.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+
+            document.body.classList.remove(
+                "mobile-nav-open"
+            );
+
         });
+
     });
 
 
-    // Close menu when clicking outside navbar
-    document.addEventListener("click", (event) => {
+    /* Close with Escape */
 
-        if (
-            jwNavbar.classList.contains("menu-open") &&
-            !jwNavbar.contains(event.target)
-        ) {
-            jwNavbar.classList.remove("menu-open");
-            document.body.classList.remove("nav-open");
-
-            jwMenu.setAttribute("aria-label", "Open menu");
-        }
-    });
-
-
-    // Close menu when pressing Escape
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", function (event) {
 
         if (event.key === "Escape") {
 
-            jwNavbar.classList.remove("menu-open");
-            document.body.classList.remove("nav-open");
+            mobileNavbar.classList.remove("menu-open");
 
-            jwMenu.setAttribute("aria-label", "Open menu");
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "mobile-nav-open"
+            );
+
         }
+
     });
 
-}
+});
