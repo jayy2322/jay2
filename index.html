@@ -32,68 +32,98 @@
 
 
 <body>
-    <header class="jw-navbar" id="jwNavbar">
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <a href="#home" class="jw-brand">
-        <span class="jw-brand-mark">
+<header class="navbar">
+
+    <!-- =========================
+         DESKTOP NAVBAR
+    ========================== -->
+
+    <div class="navbar-desktop">
+
+        <!-- Logo -->
+        <a href="#home" class="navbar-logo">
+            <img src="logo.png" alt="Jayara Web Works">
+        </a>
+
+        <!-- Menu -->
+        <nav class="navbar-menu">
+
+            <a href="#home" class="nav-link active">
+                HOME
+            </a>
+
+            <a href="#about" class="nav-link">
+                ABOUT
+            </a>
+
+            <a href="#services" class="nav-link">
+                SERVICES
+            </a>
+
+            <a href="#work" class="nav-link">
+                WORK
+            </a>
+
+            <a href="#process" class="nav-link">
+                PROCESS
+            </a>
+
+        </nav>
+
+        <!-- CTA -->
+        <a href="#contact" class="navbar-cta">
+            <span>START A PROJECT</span>
+            <span class="cta-arrow">↗</span>
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         MOBILE NAVBAR
+    ========================== -->
+
+    <div class="navbar-mobile">
+
+        <!-- Logo -->
+        <a href="#home" class="navbar-logo">
+            <img src="logo.png" alt="Jayara Web Works">
+        </a>
+
+        <!-- Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+
             <span></span>
             <span></span>
-            <span></span>
-        </span>
 
-        <img src="logo.png" alt="Jayara Web Works">
-    </a>
+        </button>
+
+    </div>
 
 
-    <nav class="jw-nav">
+    <!-- =========================
+         MOBILE MENU
+    ========================== -->
 
-        <a href="#home" class="jw-nav-link active">
-            <span class="jw-nav-number">01</span>
-            Home
-        </a>
+    <nav class="mobile-menu" id="mobileMenu">
 
-        <a href="#about" class="jw-nav-link">
-            <span class="jw-nav-number">02</span>
-            About
-        </a>
+        <a href="#home">HOME</a>
 
-        <a href="#services" class="jw-nav-link">
-            <span class="jw-nav-number">03</span>
-            Services
-        </a>
+        <a href="#about">ABOUT</a>
 
-        <a href="#portfolio" class="jw-nav-link">
-            <span class="jw-nav-number">04</span>
-            Work
-        </a>
+        <a href="#services">SERVICES</a>
 
-        <a href="#process" class="jw-nav-link">
-            <span class="jw-nav-number">05</span>
-            Process
-        </a>
+        <a href="#work">WORK</a>
+
+        <a href="#process">PROCESS</a>
+
+        <a href="#contact">START A PROJECT ↗</a>
 
     </nav>
-
-
-    <a href="#contact" class="jw-contact">
-
-        <span class="jw-contact-text">
-            Start a Project
-        </span>
-
-        <span class="jw-contact-arrow">
-            ↗
-        </span>
-
-    </a>
-
-
-    <button class="jw-menu" id="jwMenu" aria-label="Open menu">
-
-        <span></span>
-        <span></span>
-
-    </button>
 
 </header>
 
