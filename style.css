@@ -5942,3 +5942,971 @@
         transition: none !important;
     }
 }
+
+/* =========================================================
+   WORK SECTION — FINAL FIX
+========================================================= */
+
+/*
+   IMPORTANT:
+   Keeps Work completely separated from Services above it.
+*/
+
+.work-section {
+    position: relative;
+    isolation: isolate;
+    clear: both;
+
+    display: block;
+
+    width: 100%;
+
+    padding-top: 160px;
+    padding-bottom: 120px;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+/* Make sure every child stays inside Work */
+
+.work-section *,
+.work-section *::before,
+.work-section *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PROJECT CARD SAFETY
+========================================================= */
+
+.project-card {
+    position: relative;
+
+    display: grid;
+
+    width: 100%;
+
+    clear: both;
+
+    margin-top: 0;
+    margin-bottom: 120px;
+
+    float: none;
+
+    transform: none;
+}
+
+
+/* Never allow project visual to escape */
+
+.project-visual {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   LIVE PROJECT VISUAL
+========================================================= */
+
+.project-housethat,
+.project-pineapple {
+
+    position: relative;
+
+    min-height: 620px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    overflow: hidden;
+}
+
+
+/* HouseThat */
+
+.project-housethat {
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(221,181,126,.35),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #503428 0%,
+            #79513b 48%,
+            #b98b5e 100%
+        );
+}
+
+
+/* PineapplePro */
+
+.project-pineapple {
+
+    background:
+        radial-gradient(
+            circle at 25% 25%,
+            rgba(217,164,91,.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #241b17 0%,
+            #493127 50%,
+            #775039 100%
+        );
+}
+
+
+/* =========================================================
+   PROJECT INNER FRAME
+========================================================= */
+
+.project-housethat::after,
+.project-pineapple::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 28px;
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    border-radius: 25px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PROJECT OVERLAY
+========================================================= */
+
+.project-overlay {
+
+    position: absolute;
+
+    top: 48px;
+    left: 48px;
+    right: 48px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 8;
+
+    color: rgba(255,255,255,.78);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+.project-overlay strong {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   LIVE BADGE
+========================================================= */
+
+.live-badge {
+
+    position: absolute;
+
+    left: 48px;
+    bottom: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 15px;
+
+    border-radius: 100px;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.12);
+
+    backdrop-filter: blur(15px);
+
+    color: rgba(255,255,255,.9);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    z-index: 8;
+}
+
+
+.live-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #e8c98f;
+
+    box-shadow:
+        0 0 0 5px rgba(232,201,143,.13);
+
+    animation: livePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(.75);
+        opacity: .5;
+    }
+
+}
+
+
+/* =========================================================
+   PROJECT BRAND
+========================================================= */
+
+.project-brand {
+
+    position: absolute;
+
+    left: 48px;
+    bottom: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    z-index: 7;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 8vw, 125px);
+
+    line-height: .68;
+
+    letter-spacing: -.06em;
+
+    color: rgba(255,255,255,.95);
+}
+
+
+.project-brand strong {
+
+    margin-left: 65px;
+
+    font-weight: 500;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255,255,255,.8);
+}
+
+
+/* =========================================================
+   PROJECT ARROW
+========================================================= */
+
+.project-view-circle {
+
+    position: absolute;
+
+    top: 50%;
+    right: 55px;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    font-size: 22px;
+
+    z-index: 9;
+
+    transform: translateY(-50%);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        background .4s ease;
+}
+
+
+.project-visual:hover .project-view-circle {
+
+    transform:
+        translateY(-50%)
+        rotate(45deg)
+        scale(1.12);
+
+    background: rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   PROJECT HOVER
+========================================================= */
+
+.project-housethat,
+.project-pineapple {
+
+    transition:
+        transform .65s cubic-bezier(.2,.8,.2,1),
+        box-shadow .65s ease;
+}
+
+
+.project-housethat:hover,
+.project-pineapple:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 40px 100px rgba(63,42,32,.18);
+}
+
+
+/* =========================================================
+   CUP MOTIF
+========================================================= */
+
+.project-cup {
+
+    pointer-events: none;
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: 9%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 4;
+
+    opacity: .8;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1),
+        opacity .5s ease;
+}
+
+
+.project-visual:hover .project-cup {
+
+    transform:
+        translateY(-50%)
+        rotate(5deg)
+        scale(1.06);
+
+    opacity: 1;
+}
+
+
+.cup-top {
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: 40px;
+    top: 45px;
+
+    border: 2px solid rgba(255,255,255,.48);
+
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+    transform: rotate(-42deg);
+}
+
+
+.cup-side {
+
+    position: absolute;
+
+    width: 120px;
+    height: 230px;
+
+    left: 82px;
+    top: 47px;
+
+    border-left: 2px solid rgba(255,255,255,.4);
+
+    border-bottom: 2px solid rgba(255,255,255,.4);
+
+    border-bottom-left-radius: 75px;
+
+    transform: skewX(-8deg);
+}
+
+
+.cup-accent {
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    right: 20px;
+    bottom: 38px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #e4b66e,
+            var(--jw-gold)
+        );
+
+    box-shadow:
+        0 0 0 12px rgba(200,138,55,.12),
+        0 20px 40px rgba(0,0,0,.18);
+
+    animation: cupFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes cupFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   UPCOMING CARD
+========================================================= */
+
+.project-card-upcoming {
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(340px, .75fr);
+
+    gap: 45px;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+
+.project-upcoming-visual {
+
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    border: 1px solid rgba(117,75,53,.14);
+
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(200,138,55,.16),
+            transparent 30%
+        ),
+        #f8f2eb;
+}
+
+
+/* grid */
+
+.upcoming-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(117,75,53,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(117,75,53,.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    z-index: 1;
+}
+
+
+/* upcoming cup */
+
+.project-upcoming-visual .project-cup {
+
+    opacity: .16;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   UPCOMING TEXT
+========================================================= */
+
+.upcoming-status {
+
+    position: absolute;
+
+    top: 40px;
+    left: 40px;
+
+    z-index: 8;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 15px;
+
+    border-radius: 100px;
+
+    border: 1px solid rgba(117,75,53,.15);
+
+    background: rgba(255,255,255,.55);
+
+    backdrop-filter: blur(14px);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+}
+
+
+.upcoming-number {
+
+    position: absolute;
+
+    right: 40px;
+    top: 35px;
+
+    z-index: 3;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 110px;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(117,75,53,.14);
+}
+
+
+.upcoming-text {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 5;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.upcoming-text span {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .25em;
+
+    color: var(--jw-gold);
+}
+
+
+.upcoming-text strong {
+
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 7vw, 105px);
+
+    font-weight: 500;
+
+    line-height: .75;
+
+    letter-spacing: -.055em;
+
+    color: var(--jw-brown-dark);
+}
+
+
+/* =========================================================
+   MOBILE — NO OVERLAPPING
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .work-section {
+
+        padding-top: 100px;
+        padding-bottom: 70px;
+
+        overflow: hidden;
+    }
+
+
+    .work-container {
+
+        width: calc(100% - 30px);
+
+        margin: 0 auto;
+    }
+
+
+    .work-header {
+
+        display: block;
+
+        margin-bottom: 55px;
+    }
+
+
+    .work-intro {
+
+        margin-top: 30px;
+
+        max-width: 100%;
+    }
+
+
+    .project-card,
+    .project-card-large,
+    .project-card-reverse,
+    .project-card-upcoming {
+
+        display: block;
+
+        width: 100%;
+
+        margin-top: 0;
+        margin-bottom: 75px;
+
+        transform: none !important;
+    }
+
+
+    .project-visual,
+    .project-housethat,
+    .project-pineapple,
+    .project-upcoming-visual {
+
+        width: 100%;
+
+        min-height: 390px;
+
+        border-radius: 23px;
+
+        transform: none !important;
+    }
+
+
+    .project-housethat::after,
+    .project-pineapple::after {
+
+        inset: 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .project-overlay {
+
+        top: 28px;
+        left: 28px;
+        right: 28px;
+    }
+
+
+    .live-badge {
+
+        left: 28px;
+        bottom: 28px;
+    }
+
+
+    .project-brand {
+
+        left: 28px;
+        bottom: 75px;
+
+        font-size: 58px;
+    }
+
+
+    .project-brand strong {
+
+        margin-left: 28px;
+    }
+
+
+    .project-view-circle {
+
+        right: 25px;
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 17px;
+    }
+
+
+    /* smaller cup */
+
+    .project-cup {
+
+        width: 210px;
+        height: 210px;
+
+        right: -8%;
+    }
+
+
+    .cup-top {
+
+        width: 150px;
+        height: 150px;
+
+        left: 28px;
+        top: 30px;
+    }
+
+
+    .cup-side {
+
+        width: 78px;
+        height: 150px;
+
+        left: 54px;
+        top: 32px;
+    }
+
+
+    .cup-accent {
+
+        width: 44px;
+        height: 44px;
+
+        right: 8px;
+        bottom: 20px;
+    }
+
+
+    /* info */
+
+    .project-info {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 20px 3px 0;
+    }
+
+
+    .project-index {
+
+        margin-bottom: 14px;
+    }
+
+
+    .project-details {
+
+        max-width: 100%;
+    }
+
+
+    .project-details h3 {
+
+        font-size: clamp(48px, 15vw, 70px);
+    }
+
+
+    .project-view {
+
+        width: 100%;
+
+        max-width: none;
+    }
+
+
+    /* upcoming */
+
+    .project-upcoming-visual {
+
+        min-height: 370px;
+    }
+
+
+    .upcoming-status {
+
+        top: 26px;
+        left: 26px;
+
+        font-size: 7px;
+    }
+
+
+    .upcoming-number {
+
+        top: 25px;
+        right: 25px;
+
+        font-size: 70px;
+    }
+
+
+    .upcoming-text strong {
+
+        font-size: 52px;
+    }
+
+
+    /* statement */
+
+    .work-statement {
+
+        margin-top: 10px;
+
+        padding: 50px 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .work-section {
+
+        padding-top: 85px;
+    }
+
+
+    .project-visual,
+    .project-housethat,
+    .project-pineapple {
+
+        min-height: 340px;
+    }
+
+
+    .project-brand {
+
+        font-size: 48px;
+    }
+
+
+    .project-cup {
+
+        transform:
+            translateY(-50%)
+            scale(.85);
+    }
+
+
+    .upcoming-text strong {
+
+        font-size: 45px;
+    }
+
+}
