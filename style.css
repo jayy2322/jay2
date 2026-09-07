@@ -8833,67 +8833,102 @@ a {
    BIG BRAND
 ===================================================== */
 
-.footer-big {
+/* =====================================================
+   FOOTER BRAND STRIP
+===================================================== */
 
-    position: relative;
+.footer-brand-strip {
+    width: 100%;
+    max-width: 100%;
 
-    padding: 70px 0 55px;
+    padding: 42px 0 30px;
 
     overflow: hidden;
 }
 
 
-.footer-big-line {
-
+.footer-brand-line {
     width: 100%;
-
     height: 1px;
 
-    margin-bottom: 35px;
+    margin-bottom: 22px;
 
-    background: rgba(247, 240, 232, 0.12);
+    background: rgba(247, 240, 232, 0.13);
 }
 
 
-.footer-big h2 {
+.footer-brand-row {
+    width: 100%;
 
-    margin: 0;
+    display: grid;
 
+    grid-template-columns:
+        1fr
+        auto
+        auto;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* Brand name */
+
+.footer-brand-name {
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(
-        80px,
-        14vw,
-        190px
-    );
+    font-size: 30px;
 
     font-weight: 500;
 
-    line-height: 0.72;
-
-    letter-spacing: -0.065em;
-
-    white-space: nowrap;
+    letter-spacing: -0.02em;
 
     color: var(--jw-cream-light);
 }
 
 
-.footer-big h2 span {
+/* Middle text */
 
-    color: transparent;
+.footer-brand-slogan {
+    font-family: "Inter", sans-serif;
 
-    -webkit-text-stroke: 1px rgba(247, 240, 232, 0.42);
+    font-size: 8px;
 
-    font-style: italic;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    color: rgba(247, 240, 232, 0.38);
 }
 
+
+/* Code */
+
+.footer-brand-code {
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+
+    color: var(--jw-gold-light);
+}
 
 /* =====================================================
    BOTTOM
 ===================================================== */
 
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
 .footer-bottom {
+
+    width: 100%;
+    max-width: 100%;
 
     display: grid;
 
@@ -8906,9 +8941,9 @@ a {
 
     gap: 30px;
 
-    padding: 24px 0 30px;
+    padding: 22px 0 28px;
 
-    border-top: 1px solid rgba(247, 240, 232, 0.10);
+    border-top: 1px solid rgba(247, 240, 232, 0.08);
 }
 
 
@@ -8922,39 +8957,40 @@ a {
 
     font-weight: 600;
 
-    letter-spacing: 0.14em;
+    letter-spacing: 0.13em;
+
+    line-height: 1.5;
 }
 
 
 .footer-copy {
-
-    color: rgba(247, 240, 232, 0.42);
+    color: rgba(247, 240, 232, 0.38);
 }
 
 
 .footer-copy span {
-
-    color: rgba(247, 240, 232, 0.25);
+    color: rgba(247, 240, 232, 0.22);
 }
 
 
 .footer-location {
-
-    color: rgba(247, 240, 232, 0.4);
+    color: rgba(247, 240, 232, 0.38);
 }
 
 
 .footer-top-link {
 
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    color: rgba(247, 240, 232, 0.65);
+    color: rgba(247, 240, 232, 0.62);
 
     text-decoration: none;
+
+    white-space: nowrap;
 
     transition: color 0.3s ease;
 }
@@ -8967,10 +9003,10 @@ a {
     align-items: center;
     justify-content: center;
 
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 
-    border: 1px solid rgba(247, 240, 232, 0.2);
+    border: 1px solid rgba(247, 240, 232, 0.18);
 
     border-radius: 50%;
 
@@ -8983,14 +9019,74 @@ a {
 
 
 .footer-top-link:hover {
-
     color: var(--jw-gold-light);
 }
 
 
 .footer-top-link:hover span {
-
     transform: translateY(-4px);
 
-    background: rgba(200, 138, 55, 0.15);
+    background: rgba(200, 138, 55, 0.12);
+}
+/* =====================================================
+   FOOTER — MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .footer-brand-strip {
+        padding: 35px 0 24px;
+    }
+
+
+    .footer-brand-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-brand-name {
+        font-size: 26px;
+    }
+
+
+    .footer-brand-slogan {
+        font-size: 7px;
+    }
+
+
+    .footer-brand-code {
+        font-size: 7px;
+    }
+
+
+    .footer-bottom {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+
+        padding: 20px 0 25px;
+    }
+
+
+    .footer-location {
+        order: 2;
+    }
+
+
+    .footer-top-link {
+
+        order: 3;
+
+        align-self: flex-end;
+    }
 }
