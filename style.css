@@ -1,993 +1,312 @@
-/* =====================================================
-   JAYARA WEB WORKS
-   SIGNATURE NAVBAR
-===================================================== */
+/* =========================================
+   NAVBAR
+========================================= */
 
-.jw-navbar {
-
-    position: fixed;
-
-    top: 22px;
-    left: 4vw;
-    right: 4vw;
-
-    height: 66px;
-
-    display: flex;
-    align-items: center;
-
-    z-index: 9999;
-
-    transition:
-        top .5s cubic-bezier(.16,1,.3,1),
-        transform .5s cubic-bezier(.16,1,.3,1);
-}
-
-
-/* =====================================================
-   BRAND
-===================================================== */
-
-.jw-brand {
-
-    height: 66px;
-
-    padding: 0 20px 0 10px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 13px;
-
-    background: #f7f0e8;
-
-    border: 1px solid rgba(117,75,53,.18);
-
+.navbar {
+    width: 100%;
+    padding: 26px 4%;
     position: relative;
-
-    z-index: 3;
+    z-index: 1000;
 }
 
 
-/* logo */
+/* =========================================
+   DESKTOP NAVBAR
+========================================= */
 
-.jw-brand img {
+.navbar-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
 
-    width: 125px;
 
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+    width: 178px;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0e8df;
+    border: 1px solid #dfd1c4;
+
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    width: 145px;
     height: auto;
-
     display: block;
-
 }
 
 
-/* =====================================================
-   J GEOMETRIC MARK
-===================================================== */
+/* =========================================
+   NAVIGATION
+========================================= */
 
-.jw-brand-mark {
+.navbar-menu {
+    flex: 1;
 
-    position: relative;
-
-    width: 31px;
-    height: 38px;
-
-    display: block;
-
-    overflow: hidden;
-
-    background: #754b35;
-}
-
-
-/* gold top */
-
-.jw-brand-mark span:nth-child(1) {
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 22px;
-    height: 9px;
-
-    background: #c88a37;
-
-}
-
-
-/* brown vertical */
-
-.jw-brand-mark span:nth-child(2) {
-
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 12px;
-    height: 31px;
-
-    background: #754b35;
-
-}
-
-
-/* gold bottom */
-
-.jw-brand-mark span:nth-child(3) {
-
-    position: absolute;
-
-    bottom: 0;
-    left: 0;
-
-    width: 20px;
-    height: 8px;
-
-    background: #c88a37;
-
-}
-
-
-/* =====================================================
-   NAVIGATION CONTAINER
-===================================================== */
-
-.jw-nav {
-
-    height: 54px;
-
-    margin-left: 12px;
-
-    padding: 0 8px;
+    height: 68px;
 
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 70px;
 
-    background: rgba(248,241,233,.88);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(117,75,53,.14);
-
-    box-shadow:
-        0 12px 35px rgba(63,42,32,.06);
-
+    background: #f8f3ed;
+    border: 1px solid #dfd1c4;
 }
 
 
-/* =====================================================
-   NAV LINKS
-===================================================== */
-
-.jw-nav-link {
-
+.nav-link {
     position: relative;
-
-    height: 100%;
-
-    padding: 0 17px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
 
     color: #754b35;
+    text-decoration: none;
 
     font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
 
-    font-size: 9px;
+    letter-spacing: 1px;
 
-    font-weight: 700;
-
-    letter-spacing: .12em;
-
-    text-transform: uppercase;
-
-    transition:
-        color .3s ease;
+    padding: 25px 0;
 }
 
 
-/* numbers */
+/* Active / Hover Line */
 
-.jw-nav-number {
-
-    font-size: 7px;
-
-    color: #c88a37;
-
-    opacity: 0;
-
-    transform: translateY(5px);
-
-    transition:
-        opacity .3s ease,
-        transform .3s ease;
-}
-
-
-/* hover */
-
-.jw-nav-link:hover {
-
-    color: #3f2a20;
-
-}
-
-
-.jw-nav-link:hover .jw-nav-number {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-}
-
-
-/* =====================================================
-   ACTIVE INDICATOR
-===================================================== */
-
-.jw-nav-link::after {
-
+.nav-link::after {
     content: "";
 
     position: absolute;
+    left: 0;
+    bottom: 12px;
 
-    left: 17px;
-    right: 17px;
-
-    bottom: 8px;
-
-    height: 2px;
+    width: 0;
+    height: 3px;
 
     background: #c88a37;
 
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition:
-        transform .4s cubic-bezier(.16,1,.3,1);
-
+    transition: width 0.3s ease;
 }
 
 
-.jw-nav-link:hover::after,
-.jw-nav-link.active::after {
-
-    transform: scaleX(1);
-
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 
-/* =====================================================
-   CONTACT / CTA
-===================================================== */
+/* =========================================
+   START PROJECT BUTTON
+========================================= */
 
-.jw-contact {
-
-    height: 66px;
-
-    min-width: 170px;
-
-    margin-left: 12px;
-
-    padding: 0 10px 0 20px;
+.navbar-cta {
+    height: 80px;
+    min-width: 242px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: #754b35;
+    padding: 0 13px 0 24px;
 
-    color: #f7f0e8;
+    background: #754b35;
+    color: #ffffff;
+
+    text-decoration: none;
 
     font-family: "Inter", sans-serif;
-
-    font-size: 9px;
-
+    font-size: 12px;
     font-weight: 700;
 
-    letter-spacing: .13em;
-
-    text-transform: uppercase;
-
-    transition:
-        background .35s ease,
-        transform .4s cubic-bezier(.16,1,.3,1);
-
+    letter-spacing: 1px;
 }
 
 
-.jw-contact:hover {
+.cta-arrow {
+    width: 50px;
+    height: 50px;
 
-    background: #c88a37;
-
-    color: #3f2a20;
-
-    transform: translateY(-3px);
-
-}
-
-
-/* arrow box */
-
-.jw-contact-arrow {
-
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    background: rgba(239,230,221,.1);
-
-    font-size: 17px;
-
-    transition:
-        transform .4s cubic-bezier(.16,1,.3,1),
-        background .3s ease;
-
-}
-
-
-.jw-contact:hover .jw-contact-arrow {
-
-    transform: translate(3px,-3px);
-
-    background: rgba(63,42,32,.12);
-
-}
-
-
-/* =====================================================
-   MENU
-===================================================== */
-
-.jw-menu {
-
-    display: none;
-
-    width: 52px;
-    height: 52px;
-
-    margin-left: auto;
-
-    border: 1px solid rgba(117,75,53,.2);
-
-    background: #f7f0e8;
-
-    cursor: pointer;
-
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    flex-direction: column;
+    background: rgba(255, 255, 255, 0.10);
 
-    gap: 7px;
+    font-size: 22px;
 
+    transition: 0.3s ease;
 }
 
 
-.jw-menu span {
-
-    width: 20px;
-    height: 1px;
-
-    background: #754b35;
-
-    transition:
-        transform .35s ease;
-
-}
-
-
-/* =====================================================
-   SCROLLED STATE
-===================================================== */
-
-.jw-navbar.scrolled {
-
-    top: 10px;
-
-    transform: scale(.96);
-
-}
-
-
-.jw-navbar.scrolled .jw-brand,
-.jw-navbar.scrolled .jw-contact {
-
-    height: 58px;
-
-}
-
-
-.jw-navbar.scrolled .jw-nav {
-
-    height: 48px;
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1050px) {
-
-    .jw-nav-link {
-
-        padding: 0 11px;
-
-    }
-
-    .jw-contact {
-
-        min-width: 145px;
-
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 800px) {
-
-    .jw-navbar {
-
-        top: 14px;
-
-        left: 18px;
-        right: 18px;
-
-        height: 58px;
-
-    }
-
-
-    .jw-brand {
-
-        height: 58px;
-
-        padding-right: 13px;
-
-    }
-
-
-    .jw-brand img {
-
-        width: 108px;
-
-    }
-
-
-    .jw-brand-mark {
-
-        width: 26px;
-        height: 32px;
-
-    }
-
-
-    .jw-nav,
-    .jw-contact {
-
-        display: none;
-
-    }
-
-
-    .jw-menu {
-
-        display: flex;
-
-    }
-
-}/* =====================================================
-   JAYARA WEB WORKS
-   SIGNATURE NAVBAR
-===================================================== */
-
-.jw-navbar {
-
-    position: fixed;
-
-    top: 22px;
-    left: 4vw;
-    right: 4vw;
-
-    height: 66px;
-
-    display: flex;
-    align-items: center;
-
-    z-index: 9999;
-
-    transition:
-        top .5s cubic-bezier(.16,1,.3,1),
-        transform .5s cubic-bezier(.16,1,.3,1);
-}
-
-
-/* =====================================================
-   BRAND
-===================================================== */
-
-.jw-brand {
-
-    height: 66px;
-
-    padding: 0 20px 0 10px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 13px;
-
-    background: #f7f0e8;
-
-    border: 1px solid rgba(117,75,53,.18);
-
-    position: relative;
-
-    z-index: 3;
-}
-
-
-/* logo */
-
-.jw-brand img {
-
-    width: 125px;
-
-    height: auto;
-
-    display: block;
-
-}
-
-
-/* =====================================================
-   J GEOMETRIC MARK
-===================================================== */
-
-.jw-brand-mark {
-
-    position: relative;
-
-    width: 31px;
-    height: 38px;
-
-    display: block;
-
-    overflow: hidden;
-
-    background: #754b35;
-}
-
-
-/* gold top */
-
-.jw-brand-mark span:nth-child(1) {
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 22px;
-    height: 9px;
-
+.navbar-cta:hover .cta-arrow {
     background: #c88a37;
-
+    transform: translate(3px, -3px);
 }
 
 
-/* brown vertical */
-
-.jw-brand-mark span:nth-child(2) {
-
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 12px;
-    height: 31px;
-
-    background: #754b35;
-
-}
-
-
-/* gold bottom */
-
-.jw-brand-mark span:nth-child(3) {
-
-    position: absolute;
-
-    bottom: 0;
-    left: 0;
-
-    width: 20px;
-    height: 8px;
-
-    background: #c88a37;
-
-}
-
-
-/* =====================================================
-   NAVIGATION CONTAINER
-===================================================== */
-
-.jw-nav {
-
-    height: 54px;
-
-    margin-left: 12px;
-
-    padding: 0 8px;
-
-    display: flex;
-    align-items: center;
-
-    background: rgba(248,241,233,.88);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(117,75,53,.14);
-
-    box-shadow:
-        0 12px 35px rgba(63,42,32,.06);
-
-}
-
-
-/* =====================================================
-   NAV LINKS
-===================================================== */
-
-.jw-nav-link {
-
-    position: relative;
-
-    height: 100%;
-
-    padding: 0 17px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-
-    color: #754b35;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
-
-    text-transform: uppercase;
-
-    transition:
-        color .3s ease;
-}
-
-
-/* numbers */
-
-.jw-nav-number {
-
-    font-size: 7px;
-
-    color: #c88a37;
-
-    opacity: 0;
-
-    transform: translateY(5px);
-
-    transition:
-        opacity .3s ease,
-        transform .3s ease;
-}
-
-
-/* hover */
-
-.jw-nav-link:hover {
-
-    color: #3f2a20;
-
-}
-
-
-.jw-nav-link:hover .jw-nav-number {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-}
-
-
-/* =====================================================
-   ACTIVE INDICATOR
-===================================================== */
-
-.jw-nav-link::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 17px;
-    right: 17px;
-
-    bottom: 8px;
-
-    height: 2px;
-
-    background: #c88a37;
-
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition:
-        transform .4s cubic-bezier(.16,1,.3,1);
-
-}
-
-
-.jw-nav-link:hover::after,
-.jw-nav-link.active::after {
-
-    transform: scaleX(1);
-
-}
-
-
-/* =====================================================
-   CONTACT / CTA
-===================================================== */
-
-.jw-contact {
-
-    height: 66px;
-
-    min-width: 170px;
-
-    margin-left: 12px;
-
-    padding: 0 10px 0 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: #754b35;
-
-    color: #f7f0e8;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: .13em;
-
-    text-transform: uppercase;
-
-    transition:
-        background .35s ease,
-        transform .4s cubic-bezier(.16,1,.3,1);
-
-}
-
-
-.jw-contact:hover {
-
-    background: #c88a37;
-
-    color: #3f2a20;
-
-    transform: translateY(-3px);
-
-}
-
-
-/* arrow box */
-
-.jw-contact-arrow {
-
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    background: rgba(239,230,221,.1);
-
-    font-size: 17px;
-
-    transition:
-        transform .4s cubic-bezier(.16,1,.3,1),
-        background .3s ease;
-
-}
-
-
-.jw-contact:hover .jw-contact-arrow {
-
-    transform: translate(3px,-3px);
-
-    background: rgba(63,42,32,.12);
-
-}
-
-
-/* =====================================================
-   MENU
-===================================================== */
-
-.jw-menu {
-
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+.navbar-mobile {
     display: none;
-
-    width: 52px;
-    height: 52px;
-
-    margin-left: auto;
-
-    border: 1px solid rgba(117,75,53,.2);
-
-    background: #f7f0e8;
-
-    cursor: pointer;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-
-    gap: 7px;
-
 }
 
 
-.jw-menu span {
+/* Mobile Menu */
 
-    width: 20px;
-    height: 1px;
-
-    background: #754b35;
-
-    transition:
-        transform .35s ease;
-
+.mobile-menu {
+    display: none;
 }
 
 
-/* =====================================================
-   SCROLLED STATE
-===================================================== */
+/* =========================================
+   TABLET / MOBILE
+========================================= */
 
-.jw-navbar.scrolled {
+@media (max-width: 900px) {
 
-    top: 10px;
-
-    transform: scale(.96);
-
-}
-
-
-.jw-navbar.scrolled .jw-brand,
-.jw-navbar.scrolled .jw-contact {
-
-    height: 58px;
-
-}
-
-
-.jw-navbar.scrolled .jw-nav {
-
-    height: 48px;
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1050px) {
-
-    .jw-nav-link {
-
-        padding: 0 11px;
-
+    /* Hide Desktop */
+    .navbar-desktop {
+        display: none;
     }
 
-    .jw-contact {
+    /* Show Mobile */
+    .navbar-mobile {
+        display: flex;
 
-        min-width: 145px;
+        align-items: center;
+        justify-content: space-between;
 
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 800px) {
-
-    .jw-navbar {
-
-        top: 14px;
-
-        left: 18px;
-        right: 18px;
-
-        height: 58px;
-
+        width: 100%;
+        height: 70px;
     }
 
 
-    .jw-brand {
+    /* Mobile Logo */
 
-        height: 58px;
+    .navbar-mobile .navbar-logo {
+        width: 145px;
+        height: 65px;
+    }
 
-        padding-right: 13px;
-
+    .navbar-mobile .navbar-logo img {
+        width: 120px;
     }
 
 
-    .jw-brand img {
+    /* =====================================
+       MOBILE MENU BUTTON
+    ===================================== */
 
-        width: 108px;
+    .mobile-menu-btn {
+        width: 48px;
+        height: 48px;
 
+        border: 1px solid #dfd1c4;
+
+        background: #f8f3ed;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 6px;
+
+        cursor: pointer;
     }
 
 
-    .jw-brand-mark {
+    .mobile-menu-btn span {
+        display: block;
 
-        width: 26px;
-        height: 32px;
+        width: 20px;
+        height: 2px;
 
+        background: #754b35;
+
+        transition: 0.3s ease;
     }
 
 
-    .jw-nav,
-    .jw-contact {
+    /* =====================================
+       MOBILE MENU
+    ===================================== */
+
+    .mobile-menu {
+        width: 100%;
+
+        margin-top: 10px;
+
+        padding: 25px;
+
+        background: #f8f3ed;
+
+        border: 1px solid #dfd1c4;
 
         display: none;
 
+        flex-direction: column;
+
+        gap: 22px;
     }
 
 
-    .jw-menu {
+    .mobile-menu a {
+        color: #754b35;
 
-        display: flex;
+        text-decoration: none;
 
+        font-family: "Inter", sans-serif;
+
+        font-size: 13px;
+        font-weight: 600;
+
+        letter-spacing: 1px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar-mobile {
+        height: 62px;
+    }
+
+    .navbar-mobile .navbar-logo {
+        width: 130px;
+        height: 58px;
+    }
+
+    .navbar-mobile .navbar-logo img {
+        width: 108px;
+    }
+
+    .mobile-menu-btn {
+        width: 44px;
+        height: 44px;
     }
 
 }
