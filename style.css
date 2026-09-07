@@ -2742,3 +2742,916 @@
     }
 
 }
+
+
+/* =========================================================
+   JAYARA WEB WORKS — ABOUT SECTION
+========================================================= */
+
+.about-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 150px 0 70px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(200, 138, 55, .08),
+            transparent 25%
+        ),
+        var(--jw-cream-light);
+
+    color: var(--jw-brown-dark);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+    width: min(1400px, 90%);
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   TOP META
+========================================================= */
+
+.about-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 85px;
+}
+
+
+.about-number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(117, 75, 53, .18);
+
+    border-radius: 50%;
+
+    color: var(--jw-gold);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    background:
+        rgba(255, 255, 255, .35);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.about-label {
+    color: var(--jw-brown);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.about-meta-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(117,75,53,.20),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT TITLE
+========================================================= */
+
+.about-title-wrap {
+    position: relative;
+
+    padding-left: 55px;
+}
+
+
+.about-title-wrap::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    width: 2px;
+    height: 125px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--jw-gold),
+            transparent
+        );
+}
+
+
+.about-kicker {
+    margin: 0 0 28px;
+
+    color: rgba(63,42,32,.48);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.about-title {
+
+    margin: 0;
+
+    max-width: 700px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(75px, 8vw, 125px);
+
+    font-weight: 500;
+
+    line-height: .80;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+
+    color: var(--jw-brown-dark);
+}
+
+
+.about-title span {
+
+    display: block;
+
+    margin-left: 13%;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1.2px var(--jw-brown);
+}
+
+
+.about-title em {
+
+    display: block;
+
+    margin-left: 28%;
+
+    color: var(--jw-brown);
+
+    font-style: normal;
+
+    position: relative;
+}
+
+
+.about-title em::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    bottom: -18px;
+
+    width: 85px;
+    height: 3px;
+
+    background: var(--jw-gold);
+
+    transform-origin: left;
+
+    animation:
+        aboutLine 1s
+        cubic-bezier(.16,1,.3,1)
+        both;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.about-copy {
+
+    position: relative;
+
+    padding: 50px 45px;
+
+    border: 1px solid rgba(117,75,53,.13);
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.52),
+            rgba(244,237,229,.30)
+        );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(63,42,32,.06),
+        inset 0 1px 0 rgba(255,255,255,.75);
+
+    overflow: hidden;
+}
+
+
+/* Decorative corner */
+
+.about-copy::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -35px;
+    top: -35px;
+
+    border: 1px solid rgba(200,138,55,.20);
+
+    transform: rotate(45deg);
+
+    transition:
+        transform .7s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+.about-copy:hover::before {
+
+    transform:
+        rotate(90deg)
+        scale(1.15);
+}
+
+
+/* =========================================================
+   ABOUT TEXT
+========================================================= */
+
+.about-lead {
+
+    margin: 0 0 25px;
+
+    max-width: 440px;
+
+    color: var(--jw-brown);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+
+.about-description {
+
+    margin: 0;
+
+    max-width: 430px;
+
+    color: rgba(63,42,32,.62);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.about-capabilities {
+
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-top:
+        1px solid rgba(117,75,53,.12);
+}
+
+
+.capability {
+
+    min-height: 55px;
+
+    display: grid;
+
+    grid-template-columns: 40px 1fr;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid rgba(117,75,53,.12);
+
+    transition:
+        padding-left .4s
+        cubic-bezier(.16,1,.3,1),
+        background .4s ease;
+}
+
+
+.capability:hover {
+
+    padding-left: 10px;
+
+    background:
+        rgba(200,138,55,.05);
+}
+
+
+.capability span {
+
+    color: var(--jw-gold);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+.capability strong {
+
+    color: var(--jw-brown);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   ABOUT CTA
+========================================================= */
+
+.about-cta {
+
+    width: fit-content;
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--jw-brown);
+
+    text-decoration: none;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.about-cta-arrow {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(117,75,53,.20);
+
+    border-radius: 50%;
+
+    font-size: 17px;
+
+    transition:
+        transform .45s
+        cubic-bezier(.16,1,.3,1),
+        background .35s ease,
+        color .35s ease;
+}
+
+
+.about-cta:hover .about-cta-arrow {
+
+    transform:
+        translate(4px,-4px)
+        rotate(5deg);
+
+    background: var(--jw-gold);
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   ABOUT FOOTER
+========================================================= */
+
+.about-footer {
+
+    margin-top: 100px;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid rgba(117,75,53,.12);
+}
+
+
+.about-marquee {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    color: rgba(117,75,53,.42);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+
+.about-marquee i {
+
+    color: var(--jw-gold);
+
+    font-style: normal;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+}
+
+
+.about-code {
+
+    color: rgba(63,42,32,.38);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HOVER TITLE EFFECT
+========================================================= */
+
+.about-title span,
+.about-title em {
+
+    transition:
+        transform .6s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+.about-title-wrap:hover .about-title span {
+
+    transform:
+        translateX(12px);
+}
+
+
+.about-title-wrap:hover .about-title em {
+
+    transform:
+        translateX(-8px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-section {
+
+        padding:
+            120px 0 60px;
+    }
+
+
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 70px;
+    }
+
+
+    .about-title {
+
+        font-size:
+            clamp(70px, 11vw, 105px);
+    }
+
+
+    .about-copy {
+
+        max-width: 650px;
+
+        margin-left: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-section {
+
+        padding:
+            100px 0 50px;
+
+        overflow: hidden;
+    }
+
+
+    .about-container {
+
+        width: 88%;
+    }
+
+
+    /* Meta */
+
+    .about-meta {
+
+        gap: 12px;
+
+        margin-bottom: 55px;
+    }
+
+
+    .about-number {
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 8px;
+    }
+
+
+    .about-label {
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Grid */
+
+    .about-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 55px;
+
+        align-items: stretch;
+    }
+
+
+    /* Title */
+
+    .about-title-wrap {
+
+        padding-left: 25px;
+    }
+
+
+    .about-title-wrap::before {
+
+        height: 90px;
+    }
+
+
+    .about-kicker {
+
+        font-size: 8px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .about-title {
+
+        font-size:
+            clamp(52px, 15vw, 72px);
+
+        line-height: .84;
+
+        letter-spacing:
+            -2.5px;
+    }
+
+
+    .about-title span {
+
+        margin-left: 6%;
+
+        -webkit-text-stroke:
+            1px var(--jw-brown);
+    }
+
+
+    .about-title em {
+
+        margin-left: 14%;
+    }
+
+
+    .about-title em::after {
+
+        width: 60px;
+
+        height: 2px;
+
+        bottom: -11px;
+    }
+
+
+    /* Content card */
+
+    .about-copy {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding:
+            30px 24px;
+
+        border-radius: 7px;
+    }
+
+
+    .about-lead {
+
+        font-size: 26px;
+
+        line-height: 1.1;
+    }
+
+
+    .about-description {
+
+        font-size: 11.5px;
+
+        line-height: 1.8;
+    }
+
+
+    /* Capabilities */
+
+    .about-capabilities {
+
+        margin-top: 32px;
+    }
+
+
+    .capability {
+
+        min-height: 50px;
+    }
+
+
+    .capability strong {
+
+        font-size: 9px;
+    }
+
+
+    /* CTA */
+
+    .about-cta {
+
+        margin-top: 28px;
+
+        font-size: 8px;
+    }
+
+
+    .about-cta-arrow {
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 15px;
+    }
+
+
+    /* Footer */
+
+    .about-footer {
+
+        margin-top: 65px;
+
+        padding-top: 20px;
+    }
+
+
+    .about-marquee {
+
+        gap: 10px;
+
+        font-size: 15px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .about-marquee i {
+
+        font-size: 8px;
+    }
+
+
+    .about-code {
+
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .about-section {
+
+        padding-top: 85px;
+    }
+
+
+    .about-container {
+
+        width: 89%;
+    }
+
+
+    .about-title {
+
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .about-copy {
+
+        padding:
+            27px 20px;
+    }
+
+
+    .about-lead {
+
+        font-size: 23px;
+    }
+
+
+    .about-description {
+
+        font-size: 11px;
+    }
+
+
+    .about-marquee span:nth-child(1),
+    .about-marquee span:nth-child(5) {
+
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes aboutLine {
+
+    from {
+        transform:
+            scaleX(0);
+    }
+
+    to {
+        transform:
+            scaleX(1);
+    }
+}
