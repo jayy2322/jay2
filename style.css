@@ -6910,3 +6910,172 @@
     }
 
 }
+
+/* =========================================================
+   WORK — PROJECT CARD PROPORTION FIX
+========================================================= */
+
+.project-card-large {
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 38px;
+    align-items: center;
+}
+
+.project-card-reverse {
+    grid-template-columns: 0.82fr 1.18fr;
+}
+
+
+/* Smaller project visual */
+
+.project-housethat,
+.project-pineapple {
+    min-height: 500px;
+    border-radius: 28px;
+}
+
+
+/* Inner frame */
+
+.project-housethat::after,
+.project-pineapple::after {
+    inset: 22px;
+    border-radius: 20px;
+}
+
+
+/* Project typography */
+
+.project-brand {
+    left: 38px;
+    bottom: 82px;
+    font-size: clamp(60px, 6.5vw, 100px);
+}
+
+.project-brand strong {
+    margin-left: 48px;
+}
+
+
+/* Top information */
+
+.project-overlay {
+    top: 36px;
+    left: 38px;
+    right: 38px;
+}
+
+
+/* Live badge */
+
+.live-badge {
+    left: 38px;
+    bottom: 35px;
+}
+
+
+/* Arrow */
+
+.project-view-circle {
+    right: 38px;
+    width: 56px;
+    height: 56px;
+}
+
+
+/* Cup becomes a supporting element */
+
+.project-cup {
+    width: 270px;
+    height: 270px;
+    right: 5%;
+}
+
+
+/* =========================================================
+   PROJECT INFO — MORE SPACE
+========================================================= */
+
+.project-info {
+    padding: 10px 5px;
+}
+
+.project-details {
+    max-width: 470px;
+}
+
+.project-details h3 {
+    font-size: clamp(55px, 5vw, 76px);
+}
+
+
+/* =========================================================
+   DESKTOP — EVEN MORE BALANCED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .project-card-large {
+        grid-template-columns: minmax(390px, 0.82fr)
+                               minmax(620px, 1.18fr);
+
+        gap: 55px;
+    }
+
+    .project-housethat,
+    .project-pineapple {
+        min-height: 510px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .project-card-large,
+    .project-card-reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-housethat,
+    .project-pineapple {
+        min-height: 480px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .project-housethat,
+    .project-pineapple {
+        min-height: 390px;
+        border-radius: 22px;
+    }
+
+    .project-brand {
+        left: 28px;
+        bottom: 72px;
+        font-size: 55px;
+    }
+
+    .project-brand strong {
+        margin-left: 28px;
+    }
+
+    .project-cup {
+        width: 210px;
+        height: 210px;
+        right: -8%;
+    }
+
+}
