@@ -65,3 +65,65 @@ ${name}
     });
 
 }
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+const jwNavbar = document.getElementById("jwNavbar");
+const jwMenu = document.getElementById("jwMenu");
+const jwNavLinks = document.querySelectorAll(".jw-nav-link");
+
+if (jwMenu && jwNavbar) {
+
+    // Open / close mobile menu
+    jwMenu.addEventListener("click", () => {
+        jwNavbar.classList.toggle("menu-open");
+
+        const isOpen = jwNavbar.classList.contains("menu-open");
+
+        jwMenu.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        document.body.classList.toggle("nav-open", isOpen);
+    });
+
+
+    // Close menu when a navigation link is clicked
+    jwNavLinks.forEach(link => {
+        link.addEventListener("click", () => {
+
+            jwNavbar.classList.remove("menu-open");
+            document.body.classList.remove("nav-open");
+
+            jwMenu.setAttribute("aria-label", "Open menu");
+        });
+    });
+
+
+    // Close menu when clicking outside navbar
+    document.addEventListener("click", (event) => {
+
+        if (
+            jwNavbar.classList.contains("menu-open") &&
+            !jwNavbar.contains(event.target)
+        ) {
+            jwNavbar.classList.remove("menu-open");
+            document.body.classList.remove("nav-open");
+
+            jwMenu.setAttribute("aria-label", "Open menu");
+        }
+    });
+
+
+    // Close menu when pressing Escape
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            jwNavbar.classList.remove("menu-open");
+            document.body.classList.remove("nav-open");
+
+            jwMenu.setAttribute("aria-label", "Open menu");
+        }
+    });
+
+}
