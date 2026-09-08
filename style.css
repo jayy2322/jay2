@@ -8439,20 +8439,32 @@ a {
 
 }
 
-/* =========================================
-   HERO — EXPERIENCES MUST STAY ONE LINE
-========================================= */
+/* =========================================================
+   HERO — FINAL DESKTOP BALANCE
+   EXPERIENCES stays one line without touching the J
+========================================================= */
 
-@media (min-width: 701px) {
+@media (min-width: 1201px) {
+
+    .hero-title {
+        font-size: clamp(105px, 7vw, 120px);
+    }
 
     .hero-title-solid {
-        display: block !important;
-        width: max-content !important;
-        max-width: none !important;
+        display: block;
+        width: max-content;
+        max-width: none;
 
-        white-space: nowrap !important;
-        word-break: keep-all !important;
-        overflow-wrap: normal !important;
+        white-space: nowrap;
+        word-break: keep-all;
+        overflow-wrap: normal;
+
+        margin-left: 17%;
+    }
+
+    .hero-mark {
+        transform: translateX(70px) scale(.90);
+        transform-origin: center;
     }
 
 }
