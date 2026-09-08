@@ -8440,12 +8440,19 @@ a {
 }
 
 /* =========================================
-   HERO — KEEP EXPERIENCES ON ONE LINE
+   HERO — EXPERIENCES MUST STAY ONE LINE
 ========================================= */
 
-.hero-title em {
-    display: block;
-    white-space: nowrap;
-    word-break: normal;
-    overflow-wrap: normal;
+@media (min-width: 701px) {
+
+    .hero-title-solid {
+        display: block !important;
+        width: max-content !important;
+        max-width: none !important;
+
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+    }
+
 }
