@@ -8487,9 +8487,13 @@ a {
 }
 
 /* =========================================================
-   WORK — REMOVE OLD PROJECT PLACEHOLDER
+   MOBILE — REMOVE DUPLICATE PROJECT BRAND
 ========================================================= */
 
-.project-placeholder {
-    display: none !important;
+@media (max-width: 700px) {
+
+    .project-brand {
+        display: none !important;
+    }
+
 }
