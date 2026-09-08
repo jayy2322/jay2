@@ -106,3 +106,89 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+/* =========================================================
+   JAYARA WEB WORKS — MOBILE NAVBAR
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (!menuButton || !mobileMenu) {
+        console.warn("Mobile navbar elements not found.");
+        return;
+    }
+
+    menuButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = mobileMenu.classList.toggle("open");
+
+        menuButton.classList.toggle("active", isOpen);
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        document.body.classList.toggle(
+            "mobile-menu-open",
+            isOpen
+        );
+
+    });
+
+
+    /* Close menu when a link is clicked */
+
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "mobile-menu-open"
+            );
+
+        });
+
+    });
+
+
+    /* Close with ESC */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "mobile-menu-open"
+            );
+
+        }
+
+    });
+
+});
