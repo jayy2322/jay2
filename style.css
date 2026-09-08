@@ -8439,3 +8439,13 @@ a {
 
 }
 
+/* =========================================
+   HERO — KEEP EXPERIENCES ON ONE LINE
+========================================= */
+
+.hero-title em {
+    display: block;
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+}
