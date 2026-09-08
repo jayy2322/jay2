@@ -8497,3 +8497,21 @@ a {
     }
 
 }
+
+/* =========================================================
+   MOBILE — CLEAN PROJECT CARD
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Remove 01 / 03 + LIVE PROJECT */
+    .project-overlay {
+        display: none !important;
+    }
+
+    /* Remove LIVE badge */
+    .live-badge {
+        display: none !important;
+    }
+
+}
