@@ -3007,7 +3007,7 @@ a {
 
     margin: 0;
 
-    max-width: 700px;
+    max-width: none;
 
     font-family:
         "Cormorant Garamond",
@@ -8465,6 +8465,23 @@ a {
     .hero-mark {
         transform: translateX(70px) scale(.90);
         transform-origin: center;
+    }
+
+}
+
+/* =========================================================
+   ABOUT — KEEP IMPACT ON ONE LINE
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .about-title em {
+        display: block !important;
+        width: max-content !important;
+        max-width: none !important;
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
     }
 
 }
