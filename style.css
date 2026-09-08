@@ -8485,3 +8485,11 @@ a {
     }
 
 }
+
+/* =========================================================
+   WORK — REMOVE OLD PROJECT PLACEHOLDER
+========================================================= */
+
+.project-placeholder {
+    display: none !important;
+}
